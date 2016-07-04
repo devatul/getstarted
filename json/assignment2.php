@@ -1,0 +1,432 @@
+<html>
+
+<head>
+    <title>JSON example</title>
+    <script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/lodash/4.13.1/lodash.js"></script>
+    <style>
+    #wrapper{
+    width:70%;
+    margin:0px auto;
+    }
+    #div0{
+    font-family: arial;
+font-size: 15px;
+font-style: oblique;
+border: 1px solid;
+border-radius: 40px;
+text-align: center;
+    }
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid #ccc;
+        }
+        
+        table {
+            width: 100%;
+        }
+        
+        th {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
+        ul#pag {
+            margin-top: 15px;
+            text-align: center;
+        }
+        
+        ul#pag li {
+            list-style: none;
+            display: inline;
+            padding: 8px 12px;
+            border: 1px solid;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        
+        .ui-autocomplete {
+            max-height: 200px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        
+        ul#pag li.active {
+            background-color: #0782AB;
+        }
+    </style>
+
+    <style>
+    #div3 input, #right input{
+          color:red;
+          //background-color: #0782AB;
+          border: 2px solid #0782AB;
+    }
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        #div2 {
+            width: 50%;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #A2A2A2;
+            padding: 20px;
+        }
+        
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+        var person = [{
+            "id": "1",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "2",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "3",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "4",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "5",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "6",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "7",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "8",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "9",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "10",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "11",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "12",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "13",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "14",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "15",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "16",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "17",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "18",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "19",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "20",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "21",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }, {
+            "id": "22",
+            "firstname": "Dev",
+            "lastname": "Kumar",
+            "DOB": "24/05/2002"
+        }, {
+            "id": "23",
+            "firstname": "Krip",
+            "lastname": "Saini",
+            "DOB": "25/05/2002"
+        }, {
+            "id": "24",
+            "firstname": "satish",
+            "lastname": "Kumar",
+            "DOB": "24/05/2006"
+        }];
+    </script>
+    <script>
+        /******************Function Area***********************/
+
+        /****************paginate function start**********/
+        function paginate(page,json) {
+            var num_rec_per_page = 5;
+            var startfrom = (page - 1) * num_rec_per_page;
+            $("#div1 > table").append("<tr><th>First Name</th><th>Last Name</th><th>DOB</th></tr>");
+            _.forEach(json,function(val, i) {
+                if (i >= startfrom && i < startfrom + num_rec_per_page)
+                    $("#div1 > table").append("<tr><td>" + val.firstname + "</td><td>" + val.lastname + "</td><td>" + val.DOB + "</td></tr>");
+            });
+            var clas = "";
+            var total_rec = json.length;
+            var total_pages = Math.ceil(total_rec / num_rec_per_page);
+            $("#div1 > table").append("<tr><td colspan='4'><ul id='pag'></ul></td></tr>");
+            var j=1;
+           _.times(total_pages,function(){
+                if (j == page) {
+                    clas = 'active';
+                } else {
+                    clas = '';
+                }
+                $("ul").append("<li class='" + clas + "' value='" + j + "'>" + j + "</li>");
+                j++;
+           });
+            $("ul>li").click(function() {
+                page = $(this).attr("value");
+                $("#div1>table").empty();
+                paginate(page,json);
+            });
+        }
+        /****************paginate function end**********/
+        
+        /***************validation functions************/
+        //First Name validation function
+        function valid_fname() {
+            var name = $("#fname").val().trim(); //get the value of name input field
+            if (name == "") { // checks if field is not empty
+                $("#fname").css("border-color", "red"); // Error message shown if field is empty
+                return false;
+            } else {
+                $("#fname").css("border-color", "#ccc");
+                return true;
+            }
+        }
+        //Last Name validation function
+        function valid_lname() {
+            var name = $("#lname").val().trim(); //get the value of name input field
+            if (name == "") { // checks if field is not empty
+                $("#lname").css("border-color", "red"); // Error message shown if field is empty
+                return false;
+            } else {
+                $("#lname").css("border-color", "#ccc");
+                return true;
+            }
+        }
+        //Date validation function
+        function valid_date() {
+            var tdate = $("#dob").val().trim(); //get the value of name input field
+            if (tdate == "") { // checks if field is not empty
+                $("#dob").css("border-color", "red"); // Error message shown if field is empty
+                return false;
+            } else {
+                $("#dob").css("border-color", "#ccc");
+                return true;
+            }
+        }
+        /***************validation functions************/
+    </script>
+    <script language="javascript">
+        $(document).ready(function() {
+            // Page title
+            $("#div0").append("<h2>JSON data representation and manipulation </h2>");
+
+            var page = 1;
+            paginate(page,person); //first pagination call
+
+            // Datepicker fuction call
+            $("#dob").datepicker({
+                dateFormat: 'dd-mm-yy'
+            });
+            // form validation initiated here
+            $("#submit").click(function() {
+                var fname = $("#fname").val();
+                var lname = $("#lname").val();
+                var dob = $("#dob").val();
+                var id = person.length + 1;
+                var err = 0;
+
+                if (!valid_fname()) {
+                    err = 1;
+                }
+                if (!valid_lname()) {
+                    err = 1;
+                }
+                if (!valid_date()) {
+                    err = 1;
+                }
+                if (err == 0) {
+
+                    var item = {
+                        id: id,
+                        firstname: fname,
+                        lastname: lname,
+                        DOB: dob
+                    };
+                    person.unshift(item);
+                    $('form#sub').find("input[type=text]").val("");
+                    $("#div1>table").empty();
+                    paginate(1,person);
+                }
+
+
+            });
+            /**************************Search table result************************************/
+              $('#search1').keyup(function(){
+            var searchField = $('#search1').val();
+            var regex = new RegExp(searchField, "i");
+            var output = [];
+              _.forEach(person, function(val, key){
+                if ((val.firstname.search(regex) != -1) || (val.lastname.search(regex) != -1)) {
+                var item = {
+                        id: val.id,
+                        firstname: val.firstname,
+                        lastname: val.lastname,
+                        DOB: val.DOB
+                    };
+                    output.push(item);
+                }
+              });
+              $("#div1>table").empty();
+              if(output.length>0){
+              paginate(1,output);
+              }else{
+              $("#div1 > table").append("<tr><td colspan='4'><ul id='pag'><li>No data found for this search</li></ul></td></tr>");
+              }
+              
+        });
+            /**************************Search table result************************************/
+            /**************************Autocomplete started************************************/
+            // Below is the name of the textfield that will be autocomplete    
+            $('#search').autocomplete({
+                // This shows the min length of charcters that must be typed before the autocomplete looks for a match.
+                // minLength: 2,
+                source: function(request, response) {
+                    var regex = new RegExp(request.term, 'i');
+                    response($.map(person, function(value, key) {
+                        if (regex.test(value.firstname) || regex.test(value.lastname)) {
+                            return {
+                                label: value.id + " - " + value.firstname + " " + value.lastname,
+                                value: value.firstname + " " + value.lastname
+                            }
+                        }
+
+                    }));
+                },
+                scroll: true,
+                delay: 500,
+                //appendTo: '#right',  
+                //  open: function() { $('#right .ui-menu').width(100) },  
+                response: function(event, ui) {
+                    if (!ui.content.length) {
+                        var noResult = {
+                            value: "",
+                            label: "No results found"
+                        };
+                        ui.content.push(noResult);
+                    } else {
+                        $("#message").empty();
+                    }
+                }
+
+
+            });
+            /**************************Autocomplete started************************************/
+        });
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+    <div id="div0"></div>
+    <div id="right">
+
+        <input type="text" id="search" name="search" placeholder="Search Autocomplete">
+    </div>
+    <div id="div1">
+        <table></table>
+
+    </div>
+    <div id="div3">
+
+        <input type="text" id="search1" name="search1" placeholder="Search Table">
+    </div>
+
+    <div id="div2">
+        <center><span id="msg1" style="color:green"></span></center>
+        <form id="sub">
+
+            <label for="name">First Name</label>
+            <input type="text" id="fname" name="fname"></br>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname"></br>
+
+            <label for="date">Date of Birth</label>
+            <input type="text" name="dob" id="dob"></br>
+
+            <input id="submit" type="button" value="Submit">
+            <span>All fields mandatory</span>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

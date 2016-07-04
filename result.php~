@@ -1,0 +1,32 @@
+<?php
+// Database conectivity
+$con=mysqli_connect("localhost","atul","atul@001","etech_ajaxassignment ") or die("Connection error : ".mysqli_connect_error());
+
+$sql="SELECT * FROM user_data LIMIT 5";
+
+$result=mysqli_query($con,$sql);
+$record=mysqli_fetch_assoc($result)
+
+?>
+<table>
+<tr>
+<th>Sr.No.</th>
+<th>Name</th>
+<th>Email</th>
+<th>Message</th>
+<th>Date</th>
+</tr>
+<?php
+foreach($record as $row){
+?>
+<tr>
+<td><?php $row["id"]; ?></td>
+<td><?php $row["name"]; ?></td>
+<td><?php $row["email"]; ?></td>
+<td><?php $row["message"]; ?></td>
+<td><?php $row["date"]; ?></td>
+</tr>
+</table>
+<?php
+}
+

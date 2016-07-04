@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<html lang="en">
+<head>
+<title>jQuery Nivo Slider Demo</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="nivo-slider/themes/default/default.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/themes/light/light.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/themes/dark/dark.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/themes/bar/bar.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/demo/style.css" type="text/css" media="screen" />
+</head>
+<body>
+
+
+
+<div id="wrapper">
+<div class="slider-wrapper theme-default">
+<div id="slider" class="nivoSlider"> <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" /> <img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a> <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" /> <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" /> </div>
+<div id="htmlcaption" class="nivo-html-caption"> </div>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<script type="text/javascript" src="nivo-slider/jquery.nivo.slider.js"></script> 
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script> 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

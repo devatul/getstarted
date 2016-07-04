@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Assignment3</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<head>
+<body>
+<ul class="tree" id="tree">
+
+    <li><input type="checkbox" name="account_settings" value="yes">Account Settings <!-- AND SHOULD CHECK HERE -->
+        <ul>
+            <li><input type="checkbox" name="one" value="one">AS One</li>
+            <li><input type="checkbox" name="two" value="two">AS Two</li>
+            <li><input type="checkbox" name="user_roles" value="user_roles">Users &amp; Roles <!-- SHOULD CHECK HERE -->
+                <ul>
+                    <li><input type="checkbox" name="user_role" value="add">Add</li>
+                    <li><input type="checkbox" name="user_role" value="delete">Delete</li> <!-- CHECK HERE -->
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li><input type="checkbox" name="rl_module" value="yes">RL Module</li>
+
+    <li><input type="checkbox" name="rl_module" value="yes">Accounting
+        <ul>
+            <li><input type="checkbox" name="vat" value="yes">VAT</li>
+            <li><input type="checkbox" name="bank_account" value="yes">Banking
+                <ul>
+                    <li><input type="checkbox" name="view" value="yes">View</li>
+                    <li><input type="checkbox" name="crud" value="yes">CRUD</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+
+</body>
+</html>
