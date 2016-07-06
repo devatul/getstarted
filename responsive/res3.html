@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Responsive layout 3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+body{
+      margin: 0px;
+      padding: 0px;
+          font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+    }
+        * {
+            box-sizing: border-box;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+        }
+        /* For mobile phones: */
+        
+        [class*="col-"] {
+            width: 100%;
+        }
+.top-row{
+    background-color:#ccc; 
+    border-radius: 5px;
+    padding: 0px;
+    margin: 0px;
+  }
+        @media only screen and (min-width: 600px) {
+         .container {
+                width: 584px;
+            }       
+            .top-row{
+    background-color:#ccc; 
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+  }
+
+   .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+ 
+  
+
+
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+             .container {
+                width: 750px;
+            } 
+
+            .col-1 {
+                width: 8.33%;
+            }
+            .col-2 {
+                width: 16.66%;
+            }
+            .col-3 {
+                width: 25%;
+            }
+            .col-4 {
+                width: 33.33%;
+            }
+            .col-5 {
+                width: 41.66%;
+            }
+            .col-6 {
+                width: 50%;
+            }
+            .col-7 {
+                width: 58.33%;
+            }
+            .col-8 {
+                width: 66.66%;
+            }
+            .col-9 {
+                width: 75%;
+            }
+            .col-10 {
+                width: 83.33%;
+            }
+            .col-11 {
+                width: 91.66%;
+            }
+            .col-12 {
+                width: 100%;
+            }
+        }
+        
+        @media only screen and (min-width: 992px) {
+         .container {
+                width: 970px;
+            }       
+  }
+ @media only screen and (min-width: 1200px) {
+         .container {
+                width: 1170px;
+            }       
+  }
+
+   .right-row{
+    padding: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin: 10px;
+  }
+        .row {
+           
+                margin-right: -15px;
+              margin-left: -15px;
+        }
+        
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        
+         
+
+        
+        .container {
+            margin: 0px auto;
+            padding: 0px 15px;
+        }
+        
+        .banner {
+            max-width: 900px;
+            max-height: 300px;
+        }
+        
+
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        small{
+          font-size: 65%;
+          color: #777;
+          font-weight: 400;
+          line-height: 1;
+        }
+
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+  #new-board-btn {
+    white-space: normal;
+}
+  
+ 
+  .left{
+    float: left;
+  }
+  .right{
+    float: right;
+  }
+  
+  .cell{
+    margin:5px;
+    padding:5px; 
+    height:auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  #new-board-btn {
+    white-space: normal;
+}
+
+.text1{
+      padding-top: 54px;
+    word-spacing: 4px;
+}
+
+h1{
+  font-size: 36px;
+      margin-top: 20px;
+    margin-bottom: 10px;
+        margin: .67em 0;
+            font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+        display: block;
+}
+p {
+    margin: 0 0 10px 0;
+    }
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: transparent;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+
+    .catg{
+      height: auto;
+
+    }
+    .catg a{
+      width: 100%;
+      display: inline-block;
+    }
+    /*navigation */
+    nav{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #111;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:600px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:600px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+ .high{
+  height:7em;
+}
+  </style>
+  </head>
+  <body>
+<nav>
+  <div class="container menu">
+  <ul class="topnav">
+  <li><a href="#home">Layout 3</a></li>
+  <li><a href="#About">About</a></li>
+  <li><a href="#Services">Services</a></li>
+  <li><a href="#Contact">Contact</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+</div>
+</nav>
+  <script>
+function myFunction() {
+    document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+}
+</script>
+  <div class="container">
+  <div class="row">
+    <div class="col-8 col-s-8">
+      <div class="row">
+        <div class="col-12 col-s-12">
+        <h1>Blog Post Title</h1>
+        <p>By<a href="#">Test</a></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-s-12">
+        </br><p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-s-12 banner">
+        <img src="3.jpg" class="img-responsive" alt="Cinque Terre" > 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-s-12 text1">
+        <h4>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media QueriesA script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media QueriesA script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries</h4> 
+        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media QueriesA script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media QueriesA script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media QueriesA script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 col-s-4">
+    <div class="row right-row">
+    <div class="col-12 col-s-12">
+    <h4>Blog Search</h4>
+    <input type="text" class="form-control">
+    </div>
+    </div>
+    <div class="row right-row">
+    <div class="col-12 col-s-12">
+    <div class="row">
+    <div class="col-12 col-s-12">
+    <h4>Blog Categories</h4>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-6 col-s-6 catg">
+     <a class="left" href="#">Categories</a>
+     <a class="left" href="#">Categories</a>
+     <a class="left" href="#">Categories</a>
+     <a class="left" href="#">Categories</a>
+    </div>
+    <div class="col-6 col-s-6 catg">
+    <a class="right" href="#">Categories</a>
+    <a class="right" href="#">Categories</a>
+    <a class="right" href="#">Categories</a>
+    <a class="right" href="#">Categories</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row right-row">
+    <div class="col-12 col-s-12">
+    <h4>Side Widget Well</h4>
+    <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-12 col-s-12 high">
+
+  </div>
+  </div>
+  </div>
+  </body>
+</html>
