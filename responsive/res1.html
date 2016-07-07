@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Responsive layout 1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+    body{
+      margin: 0px;
+      padding: 0px;
+    }
+        * {
+            box-sizing: border-box;
+        }
+        
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+           // border: 1px solid red;
+
+        }
+        /* For mobile phones: */
+        
+        [class*="col-"] {
+            width: 100%;
+        }
+           @media only screen and (min-width: 600px) {
+         .container {
+                width: 584px;
+            }       
+  }
+  @media only screen and (min-width: 768px) {
+         .container {
+                width: 750px;
+            }       
+  }
+  @media only screen and (min-width: 992px) {
+         .container {
+                width: 970px;
+            }       
+  }
+ @media only screen and (min-width: 1200px) {
+         .container {
+                width: 1170px;
+            }       
+  }
+
+   
+
+   
+ 
+        @media only screen and (min-width: 600px) {
+         
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+
+            .col-1 {
+                width: 8.33%;
+            }
+            .col-2 {
+                width: 16.66%;
+            }
+            .col-3 {
+                width: 25%;
+            }
+            .col-4 {
+                width: 33.33%;
+            }
+            .col-5 {
+                width: 41.66%;
+            }
+            .col-6 {
+                width: 50%;
+            }
+            .col-7 {
+                width: 58.33%;
+            }
+            .col-8 {
+                width: 66.66%;
+            }
+            .col-9 {
+                width: 75%;
+            }
+            .col-10 {
+                width: 83.33%;
+            }
+            .col-11 {
+                width: 91.66%;
+            }
+            .col-12 {
+                width: 100%;
+            }
+        }
+        
+        .row {
+            width: 100%;
+        }
+        
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        
+
+     
+        .container {
+            margin: 0px auto;
+            padding: 0px 15px;
+        }
+        
+        .banner {
+            max-width: 700px;
+            max-height: 400px;
+        }
+        
+        .cell {
+            margin: 5px;
+            padding-top: 10px;
+            height: auto;
+            background-color: #ccc;
+            border-radius: 5px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        small{
+          font-size: 65%;
+          color: #777;
+          font-weight: 400;
+          line-height: 1;
+        }
+        
+        /*navigation */
+        nav{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {background-color: #111;}
+
+ul.topnav li.icon {display: none;}
+
+@media screen and (max-width:600px) {
+  ul.topnav li:not(:first-child) {display: none;}
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width:600px) {
+  ul.topnav.responsive {position: relative;}
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+.high{
+  height:7em;
+}
+    </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container menu">
+  <ul class="topnav">
+  <li><a href="#home">Layout 1</a></li>
+  <li><a href="#About">About</a></li>
+  <li><a href="#Services">Services</a></li>
+  <li><a href="#Contact">Contact</a></li>
+  <li class="icon">
+    <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+  </li>
+</ul>
+</div>
+</nav>
+  <script>
+function myFunction() {
+    document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+}
+</script>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-s-12">
+                <h1>Page Heading <small> Secondary Text</small></h1></div>
+        </div>
+        <div class="row">
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+          <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-s-4">
+                <div class="row cell">
+                    <div class="col-12 col-s-12 banner">
+                        <img src="sign.jpg" class="img-responsive" alt="Cinque Terre">
+                    </div>
+                    <div class="col-12 col-s-12">
+                        <h2>LayOut 1</h2></br>
+                        <p>A script which enables responsive design in Internet Explorer and other browsers which don´t support CSS Media Queries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+  <div class="col-12 col-s-12 high">
+
+  </div>
+  </div>
+    </div>
+</body>
+
+</html>
