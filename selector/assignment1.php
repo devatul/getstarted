@@ -9,7 +9,7 @@ list-style-type:none;
 </style>
 <head>
 <body>
-<ul class="tree" id="tree">
+<ul class="tree" id="tree">  
     <li id="parent1"><input type="checkbox" name="account_settings" value="yes">Account Settings 
         <ul class="child-group">
             <li><input type="checkbox"  name="one" value="one">AS One</li>
