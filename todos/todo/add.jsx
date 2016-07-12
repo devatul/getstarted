@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 export class TodoAdd extends React.Component {
     constructor(props){
@@ -6,16 +7,25 @@ export class TodoAdd extends React.Component {
          this.state = {
          	todo : ''
          };
-         this.addTodo = this.addTodo.bind(this);
+         
     }
     addTodo(evt){
     	evt.preventDefault();
+    	if(this.state.todo.length===0){
+    	alert("Please enter the Todo label.");
+    	this.refs.todo.className = classNames('form-control',{
+    	'has-error': this.state.todo.length===0
+    	});
+    	}else{
     	this.props.addTodo(this.state.todo);
+    	}
     	this.setState({
     		todo: ''
     	})
     }
 	render(){
+	
+	this.addTodo = this.addTodo.bind(this);
 		return (
 			<form onSubmit={this.addTodo} className="todoForm">
 			  <div className="form-group">
@@ -39,5 +49,4 @@ export class TodoAdd extends React.Component {
 		)
 	}
 }
-
-TodoAdd.propTypes = { addTodo: React.PropTypes.func.isRequired }; 
+ TodoAdd.propTypes = { addTodo: React.PropTypes.func.isRequired}
