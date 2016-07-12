@@ -49,4 +49,4 @@ export class TodoAdd extends React.Component {
 		)
 	}
 }
- TodoAdd.propTypes = { addTodo: React.PropTypes.func.isRequired}
+
