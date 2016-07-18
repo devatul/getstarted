@@ -1,0 +1,23 @@
+import React from 'react';
+import classNames from 'classnames';
+
+export class Message extends React.Component {
+    constructor(props){
+         super(props);
+     }
+     render(){
+     	let error = '';
+     	if(!_.isEmpty(this.props.error)){
+            error = <div className="alert alert-danger" role="alert">Error Adding: {this.props.error}</div>;
+        }
+        return (
+        	<div className="message">
+        	{error}
+        	</div>
+        )
+     }
+ }
+
+ Message.propTypes = {
+ 	error: React.PropTypes.string,
+ };

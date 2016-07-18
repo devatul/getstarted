@@ -1,0 +1,33 @@
+import React from 'react';
+import {TodoItem} from './todo';
+
+export class TodoList extends React.Component {
+	constructor(props){
+		super(props);
+		this.selectTodo = this.selectTodo.bind(this);
+		this.marktodo = this.marktodo.bind(this);
+	}
+	selectTodo(todo,evt){
+		this.props.selecttodo(todo);
+	}
+	marktodo(todo,evt){
+		this.props.marktodo(todo);
+	}
+	render() {
+		var todos = this.props.todos.map( (todo) => {
+			return (
+				<TodoItem selectTodo={this.selectTodo} marktodo={this.marktodo} todo={todo} key={todo.id}></TodoItem>
+			);
+		});
+		return (
+			<ul className="list-group">
+			   {todos}
+			</ul>
+		);
+	}
+}
+
+TodoList.propTypes = { 
+	marktodo: React.PropTypes.func.isRequired,
+    selecttodo: React.PropTypes.func.isRequired
+};
