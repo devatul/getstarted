@@ -1,16 +1,21 @@
 import React from 'react';
-import classNames from 'classnames';
+import * as _ from 'lodash';
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
+import { addTodo } from '../actions'
+import {classNames} from 'classnames';
 
 
-
-
-export class AddTodo extends React.Component {
+export class TodoAdd extends React.Component {
     constructor(props){
          super(props);
          this.state = {
           todo : ''
          };
          this.addTodo = this.addTodo.bind(this);
+    }
+    onBack(){
+        this.props.router.push('/');
     }
     addTodo(evt){
       evt.preventDefault();
@@ -20,15 +25,14 @@ export class AddTodo extends React.Component {
       'has-error': this.state.todo.length===0
       });
       }else{
-      this.props.addTodo(this.state.todo);
+      this.props.onAddTodo(this.state.todo);
+      this.onBack(); 
       }
       this.setState({
         todo: ''
       })
     }
   render(){
-  
-  
     return (
       <form onSubmit={this.addTodo} className="todoForm">
         <div className="form-group" >
@@ -52,3 +56,28 @@ export class AddTodo extends React.Component {
     )
   }
 }
+
+
+
+function mapStateToProps(state){
+ return {
+         todos : state,    
+        }
+}
+
+const mapDispatchToProps = (dispatch) => {   //es6 way
+     return {
+            onAddTodo: (text) => {
+            dispatch(addTodo(text))
+            }
+     }
+}
+
+const AddTodo = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoAdd)
+
+const RouterAdd = withRouter(AddTodo);
+
+export default RouterAdd

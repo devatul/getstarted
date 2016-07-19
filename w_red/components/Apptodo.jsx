@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as _ from 'lodash'
-import { toggleTodo, addTodo, editTodo, deleteTodo } from '../actions'
+import { toggleTodo, addTodo, deleteTodo } from '../actions'
 import {TodoList} from './TodoList'
 import {AddTodo} from './AddTodo'
+import { withRouter } from 'react-router'
 
 
 class Todo extends React.Component {
@@ -11,6 +12,7 @@ class Todo extends React.Component {
      super(props); 
      this.marktodo = this.marktodo.bind(this);
      this.addTodo = this.addTodo.bind(this);
+     this.addNew = this.addNew.bind(this);
      this.txtEdit = this.txtEdit.bind(this);
      this.deleteRow = this.deleteRow.bind(this);
     }
@@ -20,8 +22,11 @@ class Todo extends React.Component {
   addTodo(text){
     this.props.onAddTodo(text);
   }  
-  txtEdit(txt,id){
-    this.props.onTextEdit(txt,id);
+  addNew(){
+    this.props.router.push('/add');
+  } 
+  txtEdit(txt, id){
+    this.props.router.push('/edit/'+id+'/'+txt);
     }
    deleteRow(id){
     this.props.onDeleteRow(id);
@@ -31,7 +36,8 @@ class Todo extends React.Component {
      <div className="app row-fluid">
      <h2>Todo App</h2>
      <TodoList todos={this.props.todos} marktodo={this.marktodo} txtEdit={this.txtEdit} deleteRow={this.deleteRow} ></TodoList>
-     <AddTodo addTodo={this.addTodo} ></AddTodo>
+
+     <button type="button" className="btn btn-default" onClick={this.addNew} >AddNew+</button>
      </div>
    );
  }
@@ -49,12 +55,6 @@ const mapDispatchToProps = (dispatch) => {
     onTodoClick: (id) => {
       dispatch(toggleTodo(id))
     },
-    onAddTodo: (text) => {
-      dispatch(addTodo(text))
-    },
-    onTextEdit: (text, id) => {
-      dispatch(editTodo(text, id))
-    },
     onDeleteRow: (id) => {
       dispatch(deleteTodo(id))
     }
@@ -66,4 +66,6 @@ const Apptodo = connect(
   mapDispatchToProps
 )(Todo)
 
-export default Apptodo
+const rotTodo = withRouter(Apptodo);
+
+export default rotTodo

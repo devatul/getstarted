@@ -7,7 +7,6 @@ constructor(props) {
     this.state={text: this.props.todo.text}
     this.marktodo = this.marktodo.bind(this);
     this.edit = this.edit.bind(this);
-    this.edited = this.edited.bind(this);
     this.deleteRow = this.deleteRow.bind(this);
   }
 
@@ -15,14 +14,9 @@ constructor(props) {
     this.props.marktodo(id);
 }
 edit(){
-    this.refs.edit.className=("show");
+    this.props.txtEdit(this.props.todo.text, this.props.todo.id);
 }
-edited(){
-    let txt=this.refs.txtbx.value;
-    this.props.txtEdit(txt,this.props.todo.id);
-    this.refs.edit.className=("hide");
 
-}
 deleteRow(){
   let id = this.props.todo.id;
   this.props.deleteRow(id);
@@ -44,10 +38,7 @@ deleteRow(){
                   {delbtn}
                   {editbtn}
                   {badge}
-                  <div ref="edit" className="hidden">
-                    <input type="text" className="" value={this.state.text} onChange={()=>{this.setstate({text:this.refs.txtbx.value})}} ref="txtbx"/> 
-                    <input type="button" className="btn btn-primary btn-sm" value="edited" ref="edited" onClick={this.edited} />
-                  </div>
+                  
                   </li>
       
              );
@@ -81,7 +72,6 @@ export class TodoList extends React.Component {
         });
         return (
             <ul className="list-group">
-
                {todos}
             </ul>
         );

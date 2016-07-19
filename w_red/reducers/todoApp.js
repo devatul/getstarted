@@ -24,7 +24,7 @@ export function todoApp(state = [], action){
       ]
     case 'EDIT_TODO':
     return state.map((todo) => {
-        if (todo.id === action.id) {
+        if (todo.id == action.id) {
           return Object.assign({}, todo, {
             text: action.text
           })
