@@ -1,0 +1,40 @@
+import React from 'react';
+
+export class TodoItem extends React.Component {
+	constructor(props){
+		super(props);
+	}
+	selectTodo(evt){
+		evt.preventDefault();
+		this.props.selectTodo(this.props.todo);
+	}
+	markTodo(evt){
+		this.props.marktodo(this.props.todo);
+	}
+	render(){
+		let badge = <span className="badge">complete</span>;
+		if(!this.props.todo.marked){
+            badge = '';
+		}
+		return (
+			<li onClick={(evt) => this.selectTodo(evt)} className="list-group-item">
+		      <input 
+		             onClick={ (evt) => {evt.stopPropagation();} }
+		             onChange={ (evt) => {  this.markTodo(evt)   }} 
+		             checked={this.props.todo.marked} 
+		             type="checkbox" />  {this.props.todo.text}
+		      {badge}
+		   </li>
+		);
+	}
+}
+
+TodoItem.propTypes = {
+	todo : React.PropTypes.shape({
+		text : React.PropTypes.string,
+        marked : React.PropTypes.bool,
+        id : React.PropTypes.string
+	}),
+	marktodo : React.PropTypes.func.isRequired,
+	selectTodo: React.PropTypes.func.isRequired
+}

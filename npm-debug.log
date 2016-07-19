@@ -1,14 +1,14 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'run', 'dev' ]
-2 info using npm@3.9.5
+1 verbose cli [ '/usr/local/bin/node', '/usr/bin/npm', 'run', 'dev' ]
+2 info using npm@3.10.5
 3 info using node@v6.2.2
 4 verbose stack Error: ENOENT: no such file or directory, open '/var/www/html/atul/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /var/www/html/atul
 6 error Linux 4.2.0-16-generic
-7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "dev"
+7 error argv "/usr/local/bin/node" "/usr/bin/npm" "run" "dev"
 8 error node v6.2.2
-9 error npm  v3.9.5
+9 error npm  v3.10.5
 10 error path /var/www/html/atul/package.json
 11 error code ENOENT
 12 error errno -2
