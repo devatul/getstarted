@@ -1,16 +1,17 @@
 import React from 'react'
-import {TOGGLE_TODO, ADD_TODO} from '../actions'
+import {TOGGLE_TODO, ADD_TODO, EDIT_TODO} from '../actions'
 import * as _ from 'lodash'
 
 export function todoApp(state = [], action){
   switch(action.type){
     case 'TOGGLE_TODO':
-    let todos = state;  
-       return todos = _.map(todos, (todo) =>{
-        if(todo.id == action.id){
-          todo.marked = !todo.marked;
+     return state.map((todo) => {
+        if (todo.id === action.id) {
+          return Object.assign({}, todo, {
+            marked: !todo.marked
+          })
         }
-        return todo;
+        return todo
       })
     case 'ADD_TODO':
     return [
@@ -21,34 +22,25 @@ export function todoApp(state = [], action){
           id : state.length+1
         }
       ]
+    case 'EDIT_TODO':
+    return state.map((todo) => {
+        if (todo.id == action.id) {
+          return Object.assign({}, todo, {
+            text: action.text
+          })
+        }
+        return todo
+      })
+    case 'DELETE_TODO':
+    let todos = [];
+    state.map((todo) => {
+      if(todo.id !== action.id){
+        todos.push(todo) ;
+      }
+      })
+    return _.clone(todos);
     default:
      return _.clone(state);
   }
   }
 
-/*
-const todo = (state, action) => {
-  switch (action.type) {
-    case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
-        return state
-      }
-
-      return Object.assign({}, state, {
-        marked: !state.marked
-      })
-    default:
-      return state
-  }
-}
-const todoApp = (state = [], action) => {
-    switch (action.type) {
-    case 'TOGGLE_TODO':
-      return _.map(state, (t) => todo(t,action))
-    default:
-      return state
-    }
-      
-}
-export default todoApp
-*/

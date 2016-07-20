@@ -1,6 +1,8 @@
 
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 export const ADD_TODO = 'ADD_TODO'
+export const EDIT_TODO = 'EDIT_TODO'
+export const DELETE_TODO = 'DELETE_TODO'
 
 export function toggleTodo(id){
   return{
@@ -16,30 +18,17 @@ export function addTodo(text){
   }
 }
 
-
-/*
-let nextTodoId = 3
-
-
-export const addTodo = (text) => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  }
-}
-
-export const setVisibilityFilter = (filter) => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
-}
-
-export const toggleTodo = (id) => {
-  return {
-    type: 'TOGGLE_TODO',
+export function editTodo(text, id){
+  return{
+    type : EDIT_TODO,
+    text,
     id
   }
 }
-*/
+
+export function deleteTodo(id){
+  return{
+    type : DELETE_TODO,
+    id
+  }
+}

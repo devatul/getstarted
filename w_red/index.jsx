@@ -3,8 +3,9 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore , applyMiddleware, compose} from 'redux'
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 import {todoApp} from './reducers/todoApp'
-import Apptodo from './components/Apptodo'
+import {Apptodo, EditTodo, AddTodo } from './components/index'
 import thunk from 'redux-thunk';
 import * as _ from 'lodash';
 
@@ -41,11 +42,28 @@ store.subscribe(()=>{
 	console.log(store.getState());
 });
 
-
+class App extends React.Component {
+  constructor(props){
+  	super(props);
+  }
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
 render(
   <Provider store={store}>
-   <Apptodo />
+  <Router>
+  <Route path="/" component={App} >
+  	<IndexRoute component={Apptodo} />
+ 	<Route path="edit/:id/:txt" component={EditTodo} />
+ 	<Route path="add" component={AddTodo} />
+  </Route>
+  </Router>
   </Provider>,
   document.getElementById('myApp')
 )
